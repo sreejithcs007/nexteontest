@@ -8,11 +8,7 @@ import 'package:nexteontest/global_widgets/reusable_button.dart';
 
 import '../controller/controller.dart';
 
-// void main() {
-//   runApp(MaterialApp(
-//     home: DesktopSecondPage(),
-//   ));
-// }
+
 
 class DesktopSecondPage extends StatefulWidget {
   final SecondController controller;
@@ -36,6 +32,9 @@ class _DesktopSecondPageState extends State<DesktopSecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF277F81),
+      ),
        body:Align(
          alignment: Alignment.center,
          child: Container(

@@ -10,17 +10,17 @@ import '../../utils/namedroutes/rouet_names.dart';
 import '../../utils/navigatorkey/navigator_key.dart';
 
 final routes = GoRouter(
-  // redirect: (context, state) async {
-  //   if (await istoken() == false) {
-  //     return "/loginscreen";
-  //   } else {
-  //     if (state.fullPath == "/loginscreen") {
-  //       return "/studentsdetails";
-  //     } else {
-  //       return null;
-  //     }
-  //   }
-  // },
+  redirect: (context, state) async {
+    if (await istoken() == false) {
+      return "/loginscreen";
+    } else {
+      if (state.fullPath == "/loginscreen") {
+        return "/secondscreen";
+      } else {
+        return null;
+      }
+    }
+  },
   navigatorKey: navigatorKey,
   routes: [
     GoRoute(
@@ -42,14 +42,14 @@ final routes = GoRouter(
   ],
   initialLocation: "/loginscreen",
 );
-//
-// Future<bool> istoken() async {
-//   final SharedPreferences pref = await SharedPreferences.getInstance();
-//   String? access = pref.getString(AppConfig.token);
-//
-//   if (access != null) {
-//     return true;
-//   } else {
-//     return false;
-//   }
-// }
+
+Future<bool> istoken() async {
+  final SharedPreferences pref = await SharedPreferences.getInstance();
+  String? access = pref.getString("id");
+
+  if (access != null) {
+    return true;
+  } else {
+    return false;
+  }
+}

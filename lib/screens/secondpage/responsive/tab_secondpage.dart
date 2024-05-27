@@ -29,6 +29,9 @@ class _DesktopSecondPageState extends State<TabSecondPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF277F81),
+      ),
         body:Align(
           alignment: Alignment.center,
           child: Container(
